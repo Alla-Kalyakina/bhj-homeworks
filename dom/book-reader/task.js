@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let fontSizes = [...fontSizeControlBlock.querySelectorAll('.font-size')];
 
     fontSizes.forEach(element => {
+        element.addEventListener('click', preventDef);
         element.addEventListener('click', setFontSize.bind(this, element));
     });
 
@@ -18,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let size = parameterA.dataset.size;
         activeElement.classList.add('book_fs-' + size);
-        }
-});
+    }
 
+    function preventDef(event) {
+        event.preventDefault();
+    }
+});
