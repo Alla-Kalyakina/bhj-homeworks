@@ -33,11 +33,7 @@ function addCart() {
     const imgSrc = product.querySelector('img').getAttribute('src');
     const cartProducts = document.querySelector('.cart__products');
     const products = [...document.querySelectorAll('.cart__product')];
-    const searchElement = products.find(el => {
-        if(el.dataset.id === id) {
-            return el;
-        } 
-    });
+    const searchElement = products.find(el => el.dataset.id === id);
 
     if(searchElement) {
         const cartProduct = searchElement.querySelector('.cart__product-count');
